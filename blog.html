@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBoard</title>
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- TAILWIND AND DAISYUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONTAWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'color-primary': '#3752FD',
+                        'color-black': '#00303C',
+                        'color-secondary': 'rgba(55, 82, 253, 0.2)',
+                        'color-bg': '#F4F7FF',
+                    },
+                    fontFamily: {
+                        'title': ["Poppins", "sans-serif"],
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="font-title bg-color-bg">
+
+    <!-- Start Header Section -->
+    <header class="py-6 md:container mx-auto">
+        <div class="navbar rounded-2xl bg-white px-6 py-4">
+            <div class="flex-1 flex gap-2">
+                <img src="/assets/logo.png" alt="">
+                <a class="text-4xl font-light text-color-black">Dev<span class="font-bold">Board</span></a>
+            </div>
+            <div class="flex-none gap-9">
+                <button class="btn btn-primary border-0 text-[16px] font-medium bg-color-primary complete-btn">Back to
+                    Desk
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- End Header Section -->
+
+    <main class="md:container mx-auto">
+        <h2 class="text-center font-bold text-3xl">Blog</h2>
+
+        <div class="mt-5">
+            <div class="bg-white mb-3">
+                <h3 class="text-xl font-extrabold border-b-2 border-dashed p-3">Question-1: What are the different ways to select an element in the DOM?</h3>
+                <div class="p-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, saepe.</div>
+            </div>
+            <div class="bg-white mb-3">
+                <h3 class="text-xl font-extrabold border-b-2 border-dashed p-3">Question-1: What are the different ways to select an element in the DOM?</h3>
+                <div class="p-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, saepe.</div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
