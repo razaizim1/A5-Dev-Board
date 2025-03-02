@@ -1,10 +1,12 @@
 const allButtons = document.querySelectorAll('.complete-btn');
+const allCards = document.querySelectorAll('.card');
+let clickCount = 0;
 
 for (let i = 0; i < allButtons.length; i++) {
     allButtons[i].addEventListener('click', function (e) {
         alert('Borad Updated Successfully');
         e.preventDefault();
-        this.classList.add('opacity-30', 'cursor-not-allowed');
+        this.disabled = true;
 
         let assignedTask = document.getElementById('assigned-task');
         let assignedTaskInner = parseInt(assignedTask.innerText);
@@ -35,13 +37,44 @@ for (let i = 0; i < allButtons.length; i++) {
             let currentTime = new Date().toLocaleTimeString('en-US');
             newHistory.innerText = `You have Complete The Task ${allTitle[j].innerText} at ${currentTime} PM`;
             activityHistory.appendChild(newHistory);
+        };
+
+        clickCount++;
+
+        if (clickCount === allCards.length) {
+            alert('Congratulations! You have completed all the current tasks');
         }
     })
+
+    console.log(clickCount);
 }
 
 const clearHistoryBtn = document.getElementById('clear-history-button');
 
-clearHistoryBtn.addEventListener('click', function() {
+clearHistoryBtn.addEventListener('click', function () {
     document.getElementById('acitvity-history').innerHTML = '';
 });
 
+const themeButton = document.getElementById('theme-button');
+themeButton.addEventListener('click', function () {
+    const fullBody = document.getElementById('body');
+    const colors = ['blue', 'red', 'yellow', 'aqua', 'orange', 'aquamarine', 'brown'];
+    const randomValue = Math.floor(Math.random() * colors.length);
+    fullBody.style.backgroundColor = colors[randomValue];
+});
+
+// Week
+let currentDate = new Date();
+let dayNumber = currentDate.getDay();
+let daysArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+let weekday = daysArray[dayNumber];
+document.getElementById('task-week').innerText = weekday;
+
+let monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+let monthIndex = currentDate.getMonth();
+let monthName = monthNames[monthIndex]
+
+let day = currentDate.getDate();
+let year = currentDate.getFullYear();
+let formattedDate = `${monthName} ${day} ${year}`;
+document.getElementById('task-date').innerText = formattedDate;
